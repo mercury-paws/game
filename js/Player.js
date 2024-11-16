@@ -119,7 +119,22 @@ export default class Player {
     this.walkAnimationTimer -= frameTimeDelta * gameSpeed;
   }
 
+  
+
+  
+
   draw() {
     this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+  }
+  
+  
+  reset() {
+    this.x = 10 * this.scaleRatio;
+    this.y = this.canvas.height - this.height - 1.5 * this.scaleRatio;
+    this.yStandingPosition = this.y;
+    this.jumpPressed = false;
+    this.jumpInProgress = false;
+    this.falling = false;
+    this.image = this.standingStillImage;
   }
 }
