@@ -215,4 +215,12 @@ function getScaleRatio() {
   }
 }
 
-requestAnimationFrame(gameLoop);
+// Initial draw to show the start game text
+function initialDraw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ground.draw();
+  player.draw();
+  showStartGameText();
+}
+
+initialDraw();
